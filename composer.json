@@ -13,12 +13,12 @@
         "php": "^7.3|^8.0"
     },
     "psr-4": {
-        "Hampni\\Backupdb\\": "src/"
+        "Hampni\\Backupdb\\": "src"
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Hampni\\Backupdb\\Providers\\BackupDbProvider"
+                "Hampni\Backupdb\Providers\BackupDbProvider"
             ]
         }
     }
