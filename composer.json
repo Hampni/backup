@@ -1,0 +1,25 @@
+{
+    "name": "hampni/backupdb",
+    "description": "description",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "hampni",
+            "email": "magnus9044@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0"
+    },
+    "psr-4": {
+        "Hampni\\Backupdb\\": "src",
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "\\Hampni\\Backupdb\\Providers\\BackupDbProvider"
+            ]
+        }
+    }
+}
