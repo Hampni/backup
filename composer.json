@@ -18,7 +18,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "\\Hampni\\Backupdb\\Providers\\BackupDbProvider"
+                "Hampni\\Backupdb\\Providers\\BackupDbProvider"
             ]
         }
     }
