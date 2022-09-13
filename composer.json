@@ -2,7 +2,7 @@
     "name": "hampni/backupdb",
     "description": "Makes backup of database",
     "type": "library",
-    "version": "1.0.16",
+    "version": "1.0.17",
     "license": "MIT",
     "authors": [
         {
@@ -24,13 +24,5 @@
                 "Hampni\\Backupdb\\Providers\\BackupDbProvider"
             ]
         }
-    },
-    "scripts": {
-        "post-package-install": [
-            "@php artisan vendor:publish --provider='Hampni\\Backupdb\\Providers\\BackupDbProvider'"
-        ],
-        "post-package-update": [
-            "@php artisan vendor:publish --provider='Hampni\\Backupdb\\Providers\\BackupDbProvider'"
-        ]
     }
 }
