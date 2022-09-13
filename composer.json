@@ -2,7 +2,7 @@
     "name": "hampni/backupdb",
     "description": "Makes backup of database",
     "type": "library",
-    "version": "1.0.14",
+    "version": "1.0.15",
     "license": "MIT",
     "authors": [
         {
@@ -26,7 +26,7 @@
         }
     },
     "scripts": {
-        "post-autoload-dump": [
+        "post-install-cmd": [
             "@php artisan vendor:publish --provider='Hampni\\Backupdb\\Providers\\BackupDbProvider'"
         ]
     }
