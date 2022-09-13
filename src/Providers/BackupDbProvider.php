@@ -32,7 +32,7 @@ class BackupDbProvider extends ServiceProvider
         ]);
 
         $this->publishes([
-            __DIR__ . '/../Backups' => database_path('Backups')
+            __DIR__ . '/../Backup' => database_path('Backup')
         ]);
 
         if ($this->app->runningInConsole()) {
