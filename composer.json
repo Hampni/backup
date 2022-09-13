@@ -29,7 +29,7 @@
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi",
-            "@php artisan vendor:publish --tag={tagNameHere}--force"
+            "@php artisan vendor:publish --tag={Hampni\\Backupdb\\Providers\\BackupDbProvider}--force"
         ]
     }
 }
