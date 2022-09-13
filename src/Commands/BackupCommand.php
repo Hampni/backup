@@ -2,6 +2,7 @@
 
 namespace Hampni\Backupdb\Commands;
 
+use Hampni\Backupdb\Models\Backup;
 use Illuminate\Console\Command;
 
 class BackupCommand extends Command
@@ -18,7 +19,7 @@ class BackupCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'creates database backup max';
 
     /**
      * Create a new command instance.
@@ -37,7 +38,23 @@ class BackupCommand extends Command
      */
     public function handle()
     {
-        $ask = $this->ask('Create database backup?');
-        dd($ask);
+
+        //check if maximum amount reached
+        if (Backup::count() == config('backup.backup_amount')) {
+            //get and delete the oldest backup
+            $id = Backup::orderBy('id')->first()->id;
+            exec('rm ./database/Backup/backup-' . $id . '.sql');
+            Backup::where('id', $id)->delete();
+        }
+        //last inserted id
+        $lastId = Backup::latest('id')->first() ? Backup::latest('id')->first()->id : 0;
+
+        //crating new backup and inserting in db
+        exec('mysqldump -u ' . env('DB_USERNAME') . ' -p' . env('DB_PASSWORD') . ' ' . env('DB_DATABASE') . ' > database/Backup/backup-' . $lastId + 1 . '.sql');
+        $newBackuptitle = 'backup-' . $lastId + 1 . '.sql';
+        Backup::create([
+            'title' => $newBackuptitle
+        ]);
+
     }
 }

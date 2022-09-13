@@ -1,6 +1,6 @@
 {
     "name": "hampni/backupdb",
-    "description": "description",
+    "description": "Makes backup of database",
     "minimum-stability": "stable",
     "license": "MIT",
     "authors": [

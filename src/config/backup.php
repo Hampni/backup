@@ -1,5 +1,5 @@
 <?php
 
 return [
-    "backup_amount" => ''
+    "backup_amount" => 5
 ];
