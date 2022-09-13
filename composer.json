@@ -1,7 +1,9 @@
 {
     "name": "hampni/backupdb",
     "description": "Makes backup of database",
+    "type": "library",
     "minimum-stability": "stable",
+    "version": "1.0.0",
     "license": "MIT",
     "authors": [
         {
