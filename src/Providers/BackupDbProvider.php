@@ -24,16 +24,15 @@ class BackupDbProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadRoutesFrom(__DIR__ .'/../routes/backup.php');
-        $this->loadViewsFrom(__DIR__ .'/../resources/views', 'backupdb');
+
         $this->loadMigrationsFrom(__DIR__ .'/../database/migrations');
 
         $this->publishes([
-            __DIR__ . '/../resources/views' => app_path('Console/Commands/vendor/backup')
+            __DIR__ . '/../config/backup.php' => config_path('backup.php')
         ]);
 
         $this->publishes([
-            __DIR__ . '/../config/backup.php' => config_path('backup.php')
+            __DIR__ . '/../backups' => database_path('backups')
         ]);
 
         if ($this->app->runningInConsole()) {
